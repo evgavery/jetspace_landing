@@ -1,0 +1,505 @@
+// ============================================
+// Translations (i18n)
+// ============================================
+
+const translations = {
+    ru: {
+        // Navigation
+        'nav.about': 'О платформе',
+        'nav.audience': 'Аудитория',
+        'nav.how': 'Как работает',
+        'nav.benefits': 'Преимущества',
+        'nav.investors': 'Инвесторам',
+        
+        // Header
+        'header.login': 'Войти',
+        'header.connect': 'Подключить кошелек',
+        
+        // Hero Section
+        'hero.title': 'Обменяй "мертвые" токены на реальные активы',
+        'hero.subtitle': 'На JetSpace ты можешь превратить забытые токены в реальные вознаграждения и бонусы во множестве партнерских проектах',
+        'hero.cta1': 'Начать сейчас',
+        'hero.cta2': 'Узнать больше',
+        'hero.stat1': 'Токенов',
+        'hero.stat2': 'Партнеров',
+        'hero.stat3': 'Пользователей',
+        'hero.stat4': 'Обработано',
+        
+        // Stats Section
+        'stats.title': 'Присоединяйся к тысячам пользователей',
+        'stats.users': 'Активных пользователей',
+        'stats.value': 'Обработано токенов',
+        'stats.integrations': 'Партнерских интеграций',
+        'stats.tokens': 'Поддерживаемых токенов',
+        
+        // About Section
+        'about.title': 'JetSpace - экосистема, где мёртвые токены приносят тебе прибыль',
+        'about.subtitle': 'Все просто как 1-2-3',
+        'about.step1.title': 'Подключи SOL / TON кошелёк',
+        'about.step1.desc': 'Авторизуйся через свой кошелёк и подтяни токены, которые ты держишь',
+        'about.step2.title': 'Удерживай неликвиды',
+        'about.step2.desc': 'Заморозь бесполезные активы и превращай их в источник дохода.',
+        'about.step3.title': 'Зарабатывай XP и игровую валюту',
+        'about.step3.desc': 'Получай вознаграждения, обменивай их на реальные бонусы — фриспины, NFT, лутбоксы.',
+        'about.cta': 'Каждый токен, который пылился в твоём кошельке, теперь работает на тебя — обменивай его на реальные бонусы!',
+        
+        // Audience Section
+        'audience.title': 'Jetspace - это уникальное пространство для:',
+        'audience.web3.title': 'Web3 пользователей',
+        'audience.web3.desc': 'Холдеры «мертвых» токенов',
+        'audience.web3.benefit1': 'Монетизация неликвидных активов',
+        'audience.web3.benefit2': 'Пассивный доход от удержания',
+        'audience.web3.benefit3': 'Доступ к эксклюзивным NFT',
+        'audience.gamers.title': 'Геймеров',
+        'audience.gamers.desc': 'Любители онлайн-игр и казино',
+        'audience.gamers.benefit1': 'Бесплатные бонусы и фриспины',
+        'audience.gamers.benefit2': 'Эксклюзивные лутбоксы',
+        'audience.gamers.benefit3': 'Промокоды на игры',
+        'audience.arbitrage.title': 'Арбитражников',
+        'audience.arbitrage.desc': 'Профессиональные трейдеры',
+        'audience.arbitrage.benefit1': 'Реферальная программа до 30%',
+        'audience.arbitrage.benefit2': 'Партнерские инструменты',
+        'audience.arbitrage.benefit3': 'Приоритетная поддержка',
+        'audience.info1': '10,000+ активных пользователей',
+        'audience.info2': '$2M+ в бонусах выдано',
+        
+        // How It Works Section
+        'how.title': '4 простых шага к бонусам',
+        'how.step1.title': 'Регистрация',
+        'how.step1.desc': 'Подключи свой SOL или TON кошелек к платформе',
+        'how.step2.title': 'Удерживай токены',
+        'how.step2.desc': 'Держи поддерживаемые токены в кошельке',
+        'how.step3.title': 'Фарми валюту',
+        'how.step3.desc': 'Автоматически зарабатывай игровую валюту и XP',
+        'how.step4.title': 'Получай бонусы',
+        'how.step4.desc': 'Обменивай валюту на реальные бонусы от партнеров',
+        'how.cta.text': 'Готов начать зарабатывать?',
+        'how.cta.button': 'Подключить кошелек сейчас',
+        
+        // USP Section
+        'usp.title': 'Все для твоего профита на JetSpace',
+        'usp.monetize.title': 'Монетизация неликвида',
+        'usp.monetize.desc': 'Превращай «мертвые» токены в реальную ценность',
+        'usp.passive.title': 'Пассивный доход',
+        'usp.passive.desc': 'Получай валюту автоматически просто удерживая токены',
+        'usp.exclusive.title': 'Эксклюзивные бонусы',
+        'usp.exclusive.desc': 'Доступ к уникальным предложениям от топовых партнеров',
+        'usp.referral.title': 'Реферальная программа',
+        'usp.referral.desc': 'Зарабатывай до 30% с доходов рефералов',
+        'usp.gamification.title': 'Геймификация',
+        'usp.gamification.desc': 'Система уровней, достижений и редких наград',
+        'usp.cta.title': 'Начни зарабатывать уже сегодня',
+        'usp.cta.text': 'Подключи кошелек и получи приветственный бонус',
+        'usp.cta.button': 'Начать сейчас',
+        
+        // Investor Section
+        'investors.roadmap.title': 'Дорожная карта',
+        'investors.roadmap.completed': 'Выполнено',
+        'investors.roadmap.current': 'В процессе',
+        'investors.roadmap.upcoming': 'Планируется',
+        'investors.roadmap.q3.item1': 'Запуск MVP',
+        'investors.roadmap.q3.item2': 'Интеграция SOL и TON',
+        'investors.roadmap.q3.item3': 'Первые партнеры',
+        'investors.roadmap.q3.item4': 'Запуск фарминга',
+        'investors.roadmap.q4.item1': 'Telegram Mini app',
+        'investors.roadmap.q4.item2': '50+ токенов',
+        'investors.roadmap.q4.item3': 'Запуск Presale',
+        'investors.roadmap.q4.item4': 'Первый сезонный Jetchip',
+        'investors.roadmap.q1.item1': 'Jetchips 2.0',
+        'investors.roadmap.q1.item2': 'NFT Rewards',
+        'investors.roadmap.q1.item3': '100+ партнеров',
+        'investors.roadmap.q1.item4': 'Запуск цифрового магазина',
+        'investors.roadmap.q2.item1': 'Запуск Wingman AI',
+        'investors.roadmap.q2.item2': 'Еще больше сезонных Jetchips',
+        'investors.roadmap.q2.item3': 'Глобальная экспансия',
+        'investors.cta.title': 'Заинтересованы в партнерстве?',
+        'investors.cta.text': 'Свяжитесь с нами для получения подробной информации и презентации',
+        'investors.cta.button': 'Связаться с командой',
+        
+        // Footer
+        'footer.description': 'Превращаем неликвидные токены в реальную ценность через партнерскую сеть IGaming и GameFi проектов',
+        'footer.product': 'Продукт',
+        'footer.product.about': 'О платформе',
+        'footer.product.how': 'Как работает',
+        'footer.product.partners': 'Партнеры',
+        'footer.product.tokens': 'Токены',
+        'footer.resources': 'Ресурсы',
+        'footer.resources.docs': 'Документация',
+        'footer.resources.api': 'API',
+        'footer.resources.blog': 'Блог',
+        'footer.resources.faq': 'FAQ',
+        'footer.company': 'Компания',
+        'footer.company.about': 'О нас',
+        'footer.company.careers': 'Карьера',
+        'footer.company.contact': 'Контакты',
+        'footer.company.press': 'Пресс-кит',
+        'footer.legal': 'Правовая информация',
+        'footer.legal.terms': 'Условия использования',
+        'footer.legal.privacy': 'Политика конфиденциальности',
+        'footer.legal.cookies': 'Cookies',
+        'footer.newsletter.title': 'Будь в курсе новостей',
+        'footer.newsletter.text': 'Подпишись на рассылку и получай эксклюзивные бонусы',
+        'footer.newsletter.placeholder': 'Твой email',
+        'footer.newsletter.button': 'Подписаться',
+        'footer.copyright': '© 2025 TokenTrash. Все права защищены.',
+        'footer.bottom.terms': 'Условия',
+        'footer.bottom.privacy': 'Конфиденциальность',
+        'footer.bottom.cookies': 'Cookies'
+    },
+    en: {
+        // Navigation
+        'nav.about': 'About Platform',
+        'nav.audience': 'Audience',
+        'nav.how': 'How It Works',
+        'nav.benefits': 'Benefits',
+        'nav.investors': 'For Investors',
+        
+        // Header
+        'header.login': 'Login',
+        'header.connect': 'Connect Wallet',
+        
+        // Hero Section
+        'hero.title': 'Exchange "Dead" Tokens for Real Assets',
+        'hero.subtitle': 'On JetSpace you can turn forgotten tokens into real rewards and bonuses across multiple partner projects',
+        'hero.cta1': 'Start Now',
+        'hero.cta2': 'Learn More',
+        'hero.stat1': 'Tokens',
+        'hero.stat2': 'Partners',
+        'hero.stat3': 'Users',
+        'hero.stat4': 'Processed',
+        
+        // Stats Section
+        'stats.title': 'Join Thousands of Users',
+        'stats.users': 'Active Users',
+        'stats.value': 'Tokens Processed',
+        'stats.integrations': 'Partner Integrations',
+        'stats.tokens': 'Supported Tokens',
+        
+        // About Section
+        'about.title': 'JetSpace - Ecosystem Where Dead Tokens Bring You Profit',
+        'about.subtitle': 'As Easy as 1-2-3',
+        'about.step1.title': 'Connect SOL / TON Wallet',
+        'about.step1.desc': 'Authorize through your wallet and pull the tokens you hold',
+        'about.step2.title': 'Hold Illiquid Assets',
+        'about.step2.desc': 'Lock useless assets and turn them into a source of income.',
+        'about.step3.title': 'Earn XP and In-Game Currency',
+        'about.step3.desc': 'Get rewards, exchange them for real bonuses - free spins, NFTs, loot boxes.',
+        'about.cta': 'Every token that was collecting dust in your wallet now works for you — exchange it for real bonuses!',
+        
+        // Audience Section
+        'audience.title': 'Jetspace is a Unique Space for:',
+        'audience.web3.title': 'Web3 Users',
+        'audience.web3.desc': 'Holders of "Dead" Tokens',
+        'audience.web3.benefit1': 'Monetization of Illiquid Assets',
+        'audience.web3.benefit2': 'Passive Income from Holding',
+        'audience.web3.benefit3': 'Access to Exclusive NFTs',
+        'audience.gamers.title': 'Gamers',
+        'audience.gamers.desc': 'Online Gaming and Casino Enthusiasts',
+        'audience.gamers.benefit1': 'Free Bonuses and Free Spins',
+        'audience.gamers.benefit2': 'Exclusive Loot Boxes',
+        'audience.gamers.benefit3': 'Game Promo Codes',
+        'audience.arbitrage.title': 'Arbitrageurs',
+        'audience.arbitrage.desc': 'Professional Traders',
+        'audience.arbitrage.benefit1': 'Referral Program up to 30%',
+        'audience.arbitrage.benefit2': 'Partner Tools',
+        'audience.arbitrage.benefit3': 'Priority Support',
+        'audience.info1': '10,000+ Active Users',
+        'audience.info2': '$2M+ in Bonuses Distributed',
+        
+        // How It Works Section
+        'how.title': '4 Simple Steps to Bonuses',
+        'how.step1.title': 'Registration',
+        'how.step1.desc': 'Connect your SOL or TON wallet to the platform',
+        'how.step2.title': 'Hold Tokens',
+        'how.step2.desc': 'Keep supported tokens in your wallet',
+        'how.step3.title': 'Farm Currency',
+        'how.step3.desc': 'Automatically earn in-game currency and XP',
+        'how.step4.title': 'Get Bonuses',
+        'how.step4.desc': 'Exchange currency for real bonuses from partners',
+        'how.cta.text': 'Ready to Start Earning?',
+        'how.cta.button': 'Connect Wallet Now',
+        
+        // USP Section
+        'usp.title': 'Everything for Your Profit on JetSpace',
+        'usp.monetize.title': 'Illiquid Monetization',
+        'usp.monetize.desc': 'Turn "dead" tokens into real value',
+        'usp.passive.title': 'Passive Income',
+        'usp.passive.desc': 'Get currency automatically just by holding tokens',
+        'usp.exclusive.title': 'Exclusive Bonuses',
+        'usp.exclusive.desc': 'Access to unique offers from top partners',
+        'usp.referral.title': 'Referral Program',
+        'usp.referral.desc': 'Earn up to 30% from referral income',
+        'usp.gamification.title': 'Gamification',
+        'usp.gamification.desc': 'System of levels, achievements and rare rewards',
+        'usp.cta.title': 'Start Earning Today',
+        'usp.cta.text': 'Connect your wallet and get a welcome bonus',
+        'usp.cta.button': 'Start Now',
+        
+        // Investor Section
+        'investors.roadmap.title': 'Roadmap',
+        'investors.roadmap.completed': 'Completed',
+        'investors.roadmap.current': 'In Progress',
+        'investors.roadmap.upcoming': 'Planned',
+        'investors.roadmap.q3.item1': 'MVP Launch',
+        'investors.roadmap.q3.item2': 'SOL and TON Integration',
+        'investors.roadmap.q3.item3': 'First Partners',
+        'investors.roadmap.q3.item4': 'Farming Launch',
+        'investors.roadmap.q4.item1': 'Telegram Mini App',
+        'investors.roadmap.q4.item2': '50+ Tokens',
+        'investors.roadmap.q4.item3': 'Presale Launch',
+        'investors.roadmap.q4.item4': 'First Seasonal Jetchip',
+        'investors.roadmap.q1.item1': 'Jetchips 2.0',
+        'investors.roadmap.q1.item2': 'NFT Rewards',
+        'investors.roadmap.q1.item3': '100+ Partners',
+        'investors.roadmap.q1.item4': 'Digital Store Launch',
+        'investors.roadmap.q2.item1': 'Wingman AI Launch',
+        'investors.roadmap.q2.item2': 'More Seasonal Jetchips',
+        'investors.roadmap.q2.item3': 'Global Expansion',
+        'investors.cta.title': 'Interested in Partnership?',
+        'investors.cta.text': 'Contact us for detailed information and presentation',
+        'investors.cta.button': 'Contact Team',
+        
+        // Footer
+        'footer.description': 'Turning illiquid tokens into real value through a partner network of IGaming and GameFi projects',
+        'footer.product': 'Product',
+        'footer.product.about': 'About Platform',
+        'footer.product.how': 'How It Works',
+        'footer.product.partners': 'Partners',
+        'footer.product.tokens': 'Tokens',
+        'footer.resources': 'Resources',
+        'footer.resources.docs': 'Documentation',
+        'footer.resources.api': 'API',
+        'footer.resources.blog': 'Blog',
+        'footer.resources.faq': 'FAQ',
+        'footer.company': 'Company',
+        'footer.company.about': 'About Us',
+        'footer.company.careers': 'Careers',
+        'footer.company.contact': 'Contact',
+        'footer.company.press': 'Press Kit',
+        'footer.legal': 'Legal',
+        'footer.legal.terms': 'Terms of Service',
+        'footer.legal.privacy': 'Privacy Policy',
+        'footer.legal.cookies': 'Cookies',
+        'footer.newsletter.title': 'Stay Updated',
+        'footer.newsletter.text': 'Subscribe to newsletter and get exclusive bonuses',
+        'footer.newsletter.placeholder': 'Your email',
+        'footer.newsletter.button': 'Subscribe',
+        'footer.copyright': '© 2025 TokenTrash. All rights reserved.',
+        'footer.bottom.terms': 'Terms',
+        'footer.bottom.privacy': 'Privacy',
+        'footer.bottom.cookies': 'Cookies'
+    }
+};
+
+// Current language (default from localStorage or 'ru')
+let currentLanguage = localStorage.getItem('jetspace-lang') || 'ru';
+
+// Set language function
+function setLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('jetspace-lang', lang);
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Update all elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Update placeholder for newsletter input
+    const newsletterInput = document.querySelector('[data-i18n-placeholder]');
+    if (newsletterInput) {
+        const key = newsletterInput.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            newsletterInput.placeholder = translations[lang][key];
+        }
+    }
+    
+    // Update language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+// ============================================
+// Mobile Menu Toggle
+// ============================================
+
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+            }
+        });
+    }
+}
+
+// ============================================
+// Smooth Scroll
+// ============================================
+
+function initSmoothScroll() {
+    // All links with href starting with #
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Scroll indicator button
+    const scrollBtn = document.querySelector('.scroll-btn');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', () => {
+            const statsSection = document.getElementById('stats');
+            if (statsSection) {
+                statsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+}
+
+// ============================================
+// Live Counters
+// ============================================
+
+let activeUsersCount = 9743;
+let totalValueCount = 1987654; // in dollars
+
+function updateCounters() {
+    const activeUsersEl = document.getElementById('activeUsers');
+    const totalValueEl = document.getElementById('totalValue');
+    
+    if (activeUsersEl) {
+        activeUsersEl.textContent = activeUsersCount.toLocaleString();
+    }
+    
+    if (totalValueEl) {
+        const valueInK = Math.floor(totalValueCount / 1000);
+        totalValueEl.textContent = `$${valueInK.toLocaleString()}K`;
+    }
+}
+
+function startLiveCounters() {
+    // Update counters every 3 seconds
+    setInterval(() => {
+        // Random increment for active users (0-3)
+        activeUsersCount += Math.floor(Math.random() * 4);
+        
+        // Random increment for total value (0-1000)
+        totalValueCount += Math.floor(Math.random() * 1001);
+        
+        updateCounters();
+    }, 3000);
+}
+
+// ============================================
+// CTA Button Actions
+// ============================================
+
+function initCTAButtons() {
+    // All buttons (except language switcher and mobile menu toggle)
+    const ctaButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Don't trigger for language buttons
+            if (button.classList.contains('lang-btn')) return;
+            
+            // Redirect to Google (temporary)
+            window.location.href = 'https://google.com';
+        });
+    });
+    
+    // Newsletter form
+    const newsletterInput = document.querySelector('.newsletter-input');
+    const newsletterBtn = document.querySelector('.newsletter-form .btn-primary');
+    
+    if (newsletterBtn) {
+        newsletterBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (newsletterInput && newsletterInput.value) {
+                alert(`Email ${newsletterInput.value} subscribed! (Demo)`);
+                newsletterInput.value = '';
+            }
+        });
+    }
+}
+
+// ============================================
+// Language Switcher
+// ============================================
+
+function initLanguageSwitcher() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const lang = btn.getAttribute('data-lang');
+            if (lang && translations[lang]) {
+                setLanguage(lang);
+            }
+        });
+    });
+}
+
+// ============================================
+// Initialization
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Set initial language
+    setLanguage(currentLanguage);
+    
+    // Initialize all features
+    initMobileMenu();
+    initSmoothScroll();
+    initCTAButtons();
+    initLanguageSwitcher();
+    
+    // Start live counters
+    updateCounters(); // Initial update
+    startLiveCounters();
+    
+    console.log('JetSpace Landing - Vanilla Version Initialized ✨');
+});
+
