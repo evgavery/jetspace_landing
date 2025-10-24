@@ -1,8 +1,9 @@
-// ============================================
-// Translations (i18n)
-// ============================================
+/**
+ * JetSpace Landing - Translations
+ * Russian (ru) and English (en)
+ */
 
-const translations = {
+window.translations = {
     ru: {
         // Navigation
         'nav.about': 'О платформе',
@@ -41,7 +42,7 @@ const translations = {
         'about.step2.desc': 'Заморозь бесполезные активы и превращай их в источник дохода.',
         'about.step3.title': 'Зарабатывай XP и игровую валюту',
         'about.step3.desc': 'Получай вознаграждения, обменивай их на реальные бонусы — фриспины, NFT, лутбоксы.',
-        'about.cta': 'Каждый токен, который пылился в твоём кошельке, теперь работает на тебя — обменивай его на реальные бонусы!',
+        'about.cta': 'Каждый токен, который пылился в твоём кошельке, теперь <span class="highlight-cyan">работает на тебя</span> — обменивай его на <span class="highlight-pink">реальные бонусы!</span>',
         
         // Audience Section
         'audience.title': 'Jetspace - это уникальное пространство для:',
@@ -184,7 +185,7 @@ const translations = {
         'about.step2.desc': 'Lock useless assets and turn them into a source of income.',
         'about.step3.title': 'Earn XP and In-Game Currency',
         'about.step3.desc': 'Get rewards, exchange them for real bonuses - free spins, NFTs, loot boxes.',
-        'about.cta': 'Every token that was collecting dust in your wallet now works for you — exchange it for real bonuses!',
+        'about.cta': 'Every token that was collecting dust in your wallet now <span class="highlight-cyan">works for you</span> — exchange it for <span class="highlight-pink">real bonuses!</span>',
         
         // Audience Section
         'audience.title': 'Jetspace is a Unique Space for:',
@@ -290,216 +291,4 @@ const translations = {
         'footer.bottom.cookies': 'Cookies'
     }
 };
-
-// Current language (default from localStorage or 'ru')
-let currentLanguage = localStorage.getItem('jetspace-lang') || 'ru';
-
-// Set language function
-function setLanguage(lang) {
-    currentLanguage = lang;
-    localStorage.setItem('jetspace-lang', lang);
-    
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-    
-    // Update all elements with data-i18n
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-    
-    // Update placeholder for newsletter input
-    const newsletterInput = document.querySelector('[data-i18n-placeholder]');
-    if (newsletterInput) {
-        const key = newsletterInput.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) {
-            newsletterInput.placeholder = translations[lang][key];
-        }
-    }
-    
-    // Update language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.getAttribute('data-lang') === lang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
-// ============================================
-// Mobile Menu Toggle
-// ============================================
-
-function initMobileMenu() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-        });
-        
-        // Close menu when clicking on a link
-        mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobileMenu.classList.remove('open');
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                mobileMenu.classList.remove('open');
-            }
-        });
-    }
-}
-
-// ============================================
-// Smooth Scroll
-// ============================================
-
-function initSmoothScroll() {
-    // All links with href starting with #
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // Scroll indicator button
-    const scrollBtn = document.querySelector('.scroll-btn');
-    if (scrollBtn) {
-        scrollBtn.addEventListener('click', () => {
-            const statsSection = document.getElementById('stats');
-            if (statsSection) {
-                statsSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    }
-}
-
-// ============================================
-// Live Counters
-// ============================================
-
-let activeUsersCount = 9743;
-let totalValueCount = 1987654; // in dollars
-
-function updateCounters() {
-    const activeUsersEl = document.getElementById('activeUsers');
-    const totalValueEl = document.getElementById('totalValue');
-    
-    if (activeUsersEl) {
-        activeUsersEl.textContent = activeUsersCount.toLocaleString();
-    }
-    
-    if (totalValueEl) {
-        const valueInK = Math.floor(totalValueCount / 1000);
-        totalValueEl.textContent = `$${valueInK.toLocaleString()}K`;
-    }
-}
-
-function startLiveCounters() {
-    // Update counters every 3 seconds
-    setInterval(() => {
-        // Random increment for active users (0-3)
-        activeUsersCount += Math.floor(Math.random() * 4);
-        
-        // Random increment for total value (0-1000)
-        totalValueCount += Math.floor(Math.random() * 1001);
-        
-        updateCounters();
-    }, 3000);
-}
-
-// ============================================
-// CTA Button Actions
-// ============================================
-
-function initCTAButtons() {
-    // All buttons (except language switcher and mobile menu toggle)
-    const ctaButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
-    
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Don't trigger for language buttons
-            if (button.classList.contains('lang-btn')) return;
-            
-            // Redirect to Google (temporary)
-            window.location.href = 'https://google.com';
-        });
-    });
-    
-    // Newsletter form
-    const newsletterInput = document.querySelector('.newsletter-input');
-    const newsletterBtn = document.querySelector('.newsletter-form .btn-primary');
-    
-    if (newsletterBtn) {
-        newsletterBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (newsletterInput && newsletterInput.value) {
-                alert(`Email ${newsletterInput.value} subscribed! (Demo)`);
-                newsletterInput.value = '';
-            }
-        });
-    }
-}
-
-// ============================================
-// Language Switcher
-// ============================================
-
-function initLanguageSwitcher() {
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const lang = btn.getAttribute('data-lang');
-            if (lang && translations[lang]) {
-                setLanguage(lang);
-            }
-        });
-    });
-}
-
-// ============================================
-// Initialization
-// ============================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Set initial language
-    setLanguage(currentLanguage);
-    
-    // Initialize all features
-    initMobileMenu();
-    initSmoothScroll();
-    initCTAButtons();
-    initLanguageSwitcher();
-    
-    // Start live counters
-    updateCounters(); // Initial update
-    startLiveCounters();
-    
-    console.log('JetSpace Landing - Vanilla Version Initialized ✨');
-});
 
