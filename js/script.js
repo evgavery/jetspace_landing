@@ -203,31 +203,17 @@ function startLiveCounters() {
 }
 
 // ============================================
-// CTA Button Actions
+// Newsletter Form
 // ============================================
 
-function initCTAButtons() {
-    // All buttons (except language switcher and mobile menu toggle)
-    const ctaButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
-    
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Don't trigger for language buttons
-            if (button.classList.contains('lang-btn')) return;
-            
-            // Redirect to Google (temporary)
-            window.location.href = 'https://google.com';
-        });
-    });
-    
-    // Newsletter form
+function initNewsletter() {
     const newsletterInput = document.querySelector('.newsletter-input');
     const newsletterBtn = document.querySelector('.newsletter-form .btn-primary');
     
-    if (newsletterBtn) {
+    if (newsletterBtn && newsletterInput) {
         newsletterBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (newsletterInput && newsletterInput.value) {
+            e.preventDefault();
+            if (newsletterInput.value) {
                 alert(`Email ${newsletterInput.value} subscribed! (Demo)`);
                 newsletterInput.value = '';
             }
@@ -262,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all features
     initMobileMenu();
     initSmoothScroll();
-    initCTAButtons();
+    initNewsletter();
     initLanguageSwitcher();
     
     // Start live counters
